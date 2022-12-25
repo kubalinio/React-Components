@@ -1,0 +1,177 @@
+.body {
+	position: relative;
+	background: #000;
+	color: #fff;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+		'Helvetica Neue', sans-serif;
+
+	.symbols {
+		font-size: 22px;
+	}
+
+	.sidebar {
+		position: static; //position fixed in orginal
+		top: 100px;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 250px;
+		height: 100%;
+		padding: 40px 10px 30px 10px;
+		border-right: 1px solid #2f3336;
+
+		header {
+			width: 100%;
+			margin-bottom: 16px;
+
+			.logo {
+				font-size: 32px;
+				margin-left: 10px;
+			}
+		}
+
+		button {
+			height: 60px;
+			border: 0;
+			padding: 0;
+			font-family: inherit;
+			color: inherit;
+			background: transparent;
+			text-align: left;
+			cursor: pointer;
+
+			& > span {
+				display: inline-flex;
+				align-items: center;
+				gap: 12px;
+				height: 48px;
+				padding: 0 16px 0 12px;
+				border-radius: 24px;
+				line-height: 1;
+			}
+
+			&:hover > span {
+				background: rgba(255, 255, 255, 0.08);
+			}
+
+			& i {
+				position: relative;
+				font-size: 28px;
+				transition: background 0.3;
+			}
+
+			& img {
+				width: 32px;
+				height: 32px;
+			}
+
+			& i > span {
+				position: absolute;
+				display: grid;
+				place-items: center;
+				padding: 2px 5px;
+				border-radius: 10px;
+				top: -5px;
+				left: 50%;
+				translate: -50% 0;
+				background: #1d9bf0;
+				color: #f9f9f9;
+				font-size: 10px;
+				font-family: BlinkMacSystemFont;
+				font-style: normal;
+			}
+
+			& span {
+				font-size: 17px;
+			}
+		}
+
+		& > nav {
+			flex: 1 1 auto;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		& > nav button:last-child {
+			margin-top: auto;
+		}
+
+		button.tweet {
+			text-align: center;
+
+			& > span {
+				background: #1d9bf0;
+				width: 100%;
+				justify-content: center;
+			}
+
+			i {
+				display: none;
+			}
+
+			& span > span {
+				display: block;
+			}
+		}
+
+		button.user {
+			.fullname {
+				font-size: 15px;
+			}
+
+			.username {
+				color: rgba(197, 181, 181, 1);
+				font-size: 12px;
+			}
+
+			span {
+				width: 100%;
+			}
+
+			& span > span {
+				display: grid;
+				gap: 4px;
+				width: 100%;
+			}
+
+			& span > i {
+				font-size: 20px;
+				margin-left: auto;
+			}
+		}
+	}
+
+	@media (width < 580px) {
+		.sidebar {
+			width: 72px;
+
+			& button > span {
+				width: 50px;
+			}
+
+			& button > span > span {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			button.tweet {
+				span {
+					justify-content: initial;
+				}
+				i {
+					display: inline-flex;
+				}
+
+				& span > span {
+					display: none;
+				}
+			}
+
+			button.user span > i {
+				display: none;
+			}
+		}
+	}
+}

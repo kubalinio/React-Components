@@ -1,0 +1,203 @@
+.section {
+	background: #2a262c;
+	font-family: 'Euclid Circular A', sans-serif;
+
+	button {
+		background: transparent;
+		border: 0;
+		padding: 0;
+		cursor: pointer;
+		text-align: left;
+	}
+
+	.sidebar {
+		position: fixed;
+		top: 96px;
+		left: 0;
+		width: 260px;
+		height: 100%;
+		background: #0a0910;
+		transition: width 0.4s;
+
+		& > div {
+			padding: 0 20px;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		header {
+			position: relative;
+			display: flex;
+			align-items: center;
+			height: 72px;
+			border-bottom: 1px solid rgba(255 255 255 / 10%);
+			margin-bottom: 16px;
+		}
+
+		.sidebarHeader button {
+			flex: 1 1 auto;
+			display: grid;
+			place-items: center;
+			opacity: 0.5;
+		}
+
+		button .symbols {
+			color: #e0e0e0;
+		}
+
+		.sidebarHeader button.active {
+			opacity: 1;
+		}
+
+		button {
+			position: relative;
+			display: flex;
+			gap: 16px;
+			align-items: center;
+			height: 50px;
+			width: 100%;
+			font-family: inherit;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1;
+			padding: 0 25px;
+			color: #f9f9f9;
+		}
+
+		.symbols {
+			font-size: 22px;
+		}
+
+		.tabs {
+			flex: 1 1 auto;
+			position: relative;
+			overflow: hidden;
+
+			& > div {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: flex;
+				opacity: 0;
+				width: 100%;
+				visibility: hidden;
+				translate: 0 20px;
+				transition: 0.3s;
+			}
+
+			& > div.active {
+				opacity: 1;
+				visibility: visible;
+				translate: 0;
+			}
+
+			& > div > div {
+				display: grid;
+				width: 100%;
+			}
+		}
+
+		form {
+			flex: 1 1 auto;
+			min-width: 0;
+			margin: 0;
+			padding: 16px 16px;
+			display: grid;
+			gap: 16px;
+			width: 100%;
+
+			button,
+			input {
+				border: 0;
+				padding: 12px 0;
+				height: 60px;
+				background: transparent;
+				font-family: inherit;
+				font-size: 14px;
+				outline: none;
+			}
+
+			.textbox {
+				position: relative;
+
+				span {
+					position: absolute;
+					top: 50%;
+					translate: 0 -50%;
+					left: 16px;
+					font-size: 20px;
+					pointer-events: none;
+					color: rgba(255 255 255 / 40%);
+				}
+
+				input {
+					padding: 0 24px 0 46px;
+					border-radius: 6px;
+					border: 2px solid rgba(255 255 255 / 10%);
+					color: rgba(255 255 255 / 96%);
+					height: 50px;
+					width: 190px;
+				}
+			}
+		}
+
+		.row {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 10px;
+			width: 100%;
+
+			.switchLabel {
+				font-size: 14px;
+				color: rgba(255 255 255 / 60%);
+			}
+
+			.switch {
+				display: inline-block;
+
+				input {
+					display: none;
+				}
+
+				label {
+					display: block;
+					width: 40px;
+					height: 20px;
+					padding: 2px;
+					border-radius: 15px;
+					border: 2px solid #7e8382;
+					cursor: pointer;
+					transition: 0.3s;
+
+					&::after {
+						content: '';
+						display: inherit;
+						width: 12px;
+						height: 12px;
+						border-radius: 12px;
+						background: #7e8382;
+						transition: 0.3s;
+					}
+				}
+
+				input:checked ~ label {
+					border-color: #ff5bab;
+				}
+				input:checked ~ label::after {
+					translate: 20px 0;
+				}
+
+				input:disabled ~ label {
+					opacity: 0.35;
+					cursor: not-allowed;
+				}
+
+				&.square label,
+				&.square label::after {
+					border-radius: 0;
+				}
+			}
+		}
+	}
+}

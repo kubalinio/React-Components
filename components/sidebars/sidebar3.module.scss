@@ -1,0 +1,97 @@
+.section {
+	position: relative;
+	background: #ededed;
+	width: 100%;
+
+	button {
+		background: transparent;
+		border: 0;
+		padding: 0;
+		cursor: pointer;
+		text-align: left;
+	}
+}
+
+.sidebar {
+	position: fixed;
+	top: 96px;
+	left: 0;
+	width: 260px;
+	height: 100%;
+	background: #fff;
+	transition: width 0.4s;
+
+	.header {
+		display: flex;
+		align-items: center;
+		height: 72px;
+		padding: 0 12px 0 0;
+		border-bottom: 1px solid #e1e1e1;
+
+		button {
+			width: 64px;
+		}
+	}
+
+	.logo {
+		height: 20px;
+	}
+
+	button {
+		position: relative;
+		display: flex;
+		gap: 16px;
+		align-items: center;
+		height: 50px;
+		width: 100%;
+		font-family: inherit;
+		font-size: 16px;
+		font-weight: 400px;
+		line-height: 1;
+		padding: 0 25px;
+		color: #1a1a1a;
+
+		&span:nth-child(2) {
+			flex: 1 1 auto;
+		}
+
+		&.active {
+			background: #9d5bff;
+			color: #f9f9f9;
+		}
+	}
+
+	.subNav {
+		overflow: hidden;
+		height: 0;
+		transition: 0.5s;
+
+		.open {
+			height: 200px;
+		}
+
+		button {
+			padding-left: 64px;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 36px;
+				translate: 0 -50%;
+				width: 5px;
+				height: 5px;
+				border-radius: 50%;
+				background-color: #1a1a1a;
+			}
+
+			&.active::before {
+				background: #f9f9f9;
+			}
+		}
+	}
+
+	.symbols {
+		font-size: 22px;
+	}
+}

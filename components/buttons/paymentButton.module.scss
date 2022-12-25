@@ -1,0 +1,137 @@
+.buttonContainer {
+	button {
+		position: relative;
+		overflow: hidden;
+		gap: 16px;
+		color: #f9f9f9;
+		background: #2932d1;
+		border: 0;
+		border-radius: 6px;
+		padding: 0;
+		width: 260px;
+		height: 70px;
+		font-size: 18px;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		cursor: pointer;
+		transition: 0.3s;
+
+		.text {
+			position: absolute;
+			top: 50%;
+			left: 130px;
+			translate: -38% -50%;
+			white-space: nowrap;
+
+			@keyframes text {
+				0% {
+					translate: -38%, 50%;
+				}
+				4%,
+				100% {
+					translate: -50%, -50%;
+				}
+				20%,
+				40% {
+					opacity: 0;
+				}
+				30%,
+				50% {
+					opacity: 1;
+				}
+			}
+		}
+
+		&:disabled .text {
+			animation: text 3.7s ease-in;
+		}
+
+		.icon {
+			position: absolute;
+			top: 50%;
+			left: 30px;
+			translate: 0 -50%;
+			display: block;
+			width: 30px;
+			height: 18px;
+			border-radius: 2px;
+
+			&::after,
+			&::before {
+				content: '';
+				display: inherit;
+				position: absolute;
+				left: 0;
+				width: 100%;
+				background-color: #f9f9f9;
+			}
+
+			&::before {
+				top: 0;
+				height: 12px;
+				border-top-left-radius: 3px;
+				border-top-right-radius: 3px;
+			}
+			&::after {
+				bottom: 0;
+				height: 3px;
+				border-bottom-left-radius: 3px;
+				border-bottom-right-radius: 3px;
+			}
+
+			@keyframes icon {
+				5%,
+				100% {
+					height: 6px;
+					border-radius: 0;
+				}
+				3%,
+				15% {
+					background: #5059e9;
+					translate: -30px 20px;
+					scale: 1 0.25;
+				}
+				45% {
+					opacity: 1;
+				}
+				50%,
+				100% {
+					opacity: 0;
+				}
+				21%,
+				100% {
+					translate: 240px 20px;
+				}
+			}
+		}
+
+		&:disabled .icon {
+			animation: icon 3.7s ease-in;
+		}
+
+		.rail {
+			position: absolute;
+			display: block;
+			left: 0;
+			bottom: 10px;
+			width: 100%;
+			height: 2px;
+			background: rgba(0 0 0 / 20%);
+			opacity: 0;
+
+			@keyframes rail {
+				0%,
+				40% {
+					opacity: 1;
+				}
+				55%,
+				100% {
+					opacity: 0;
+				}
+			}
+		}
+
+		&:disabled .rail {
+			animation: rail 3.7s ease-in;
+		}
+	}
+}
