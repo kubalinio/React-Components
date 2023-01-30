@@ -1,4 +1,4 @@
-import SendButton from '../../components/buttons/sendButton';
+import SendButton from '../../components/buttons/SendButton/sendButton';
 
 const sendButtonPage = () => {
 	return (

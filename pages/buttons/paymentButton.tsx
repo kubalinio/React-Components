@@ -1,4 +1,4 @@
-import PaymentButton from '../../components/buttons/paymentButton';
+import PaymentButton from '../../components/buttons/PaymentButton/paymentButton';
 
 const paymentButtonPage = () => {
 	return (

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto&family=Source+Sans+Pro:wght@300&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -46,9 +50,8 @@ body {
 
 	margin: 0;
 	background-color: var(--color-grey-500);
-	color: #252525;
+	color: #fff;
 	font-family: 'Roboto', sans-serif;
-
 	transition: 0.3s;
 }
 
@@ -57,7 +60,6 @@ body {
 }
 
 main {
-	width: 100vw;
 	height: 90vh;
 }
 
@@ -147,3 +149,5 @@ body.dark .handle::before {
 }
 
 /* End Css */
+
+/* FAB BUTTON */

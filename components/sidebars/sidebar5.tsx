@@ -79,7 +79,8 @@ const NavHeader: FC<HeaderProps> = ({ activeTab, onTabClicked }) => (
 				key={tab.name + index}
 				type='button'
 				onClick={() => onTabClicked(index)}
-				className={`${activeTab === index ? `${classes.active}` : ''}`}>
+				className={`${activeTab === index ? `${classes.active}` : ''}`}
+			>
 				<Icon icon={tab.icon} />
 			</button>
 		))}

@@ -126,6 +126,7 @@ const Sidebar = () => {
 		<section className={classes.section}>
 			<aside className={classes.sidebar}>
 				<NavHeader />
+
 				{menuItems.map(item => (
 					<>
 						{!item.items && (

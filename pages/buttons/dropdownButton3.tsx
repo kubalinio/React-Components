@@ -1,9 +1,9 @@
-import { DropdownButton } from '../../components/buttons/DropdownButton/dropdownButton';
+import DropdownButton3 from '../../components/buttons/DropdownButton3/dropdownButton3';
 
 const dropdownButtonPage = () => {
 	return (
 		<section className='section'>
-			<DropdownButton />
+			<DropdownButton3 />
 		</section>
 	);
 };

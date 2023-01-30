@@ -1,6 +1,4 @@
-import React from 'react';
-
-import DropdownButton2 from '../../components/buttons/dropdownButton2';
+import DropdownButton2 from '../../components/buttons/DropdownButton2/dropdownButton2';
 
 const dropdownButtonPage = () => {
 	return (

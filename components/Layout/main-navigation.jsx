@@ -20,6 +20,9 @@ const MainNavigation = () => {
 					<li>
 						<Link href='/buttons'>Buttons</Link>
 					</li>
+					<li>
+						<Link href='/image-gallery'>Image Gallery</Link>
+					</li>
 				</ul>
 			</nav>
 		</header>

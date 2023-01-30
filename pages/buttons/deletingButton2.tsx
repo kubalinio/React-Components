@@ -1,4 +1,4 @@
-import DeleteButton2 from '../../components/buttons/deleteButton2';
+import DeleteButton2 from '../../components/buttons/DeleteButton2/deleteButton2';
 
 const deletingButton2Page = () => {
 	return (
