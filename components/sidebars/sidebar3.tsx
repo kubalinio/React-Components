@@ -105,6 +105,7 @@ const SubMenu: FC<SubMenuProps> = ({ item, activeItem, handleClick }) => {
 			style={{
 				height: !isSubNavOpen(item.name, item.items) ? 0 : navRef.current?.clientHeight,
 			}}>
+
 			<div ref={navRef} className={classes.navInner}>
 				{item?.items.map(subItem => (
 					<NavButton onClick={handleClick} name={subItem} isActive={activeItem === subItem} />

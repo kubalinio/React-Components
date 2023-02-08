@@ -10,6 +10,7 @@ import {
 	AiOutlineSetting,
 	AiOutlineSearch,
 } from 'react-icons/ai';
+
 import { RiAddBoxLine, RiAccountCircleLine } from 'react-icons/ri';
 import { CgProfile } from 'react-icons/cg';
 import { MdOutlineInventory2, MdOutlineFavoriteBorder, MdOutlineEmail } from 'react-icons/md';
@@ -115,6 +116,7 @@ const Sidebar = () => {
 	const handleTabClicked = (tab: number) => {
 		setActiveTab(tab);
 	};
+
 
 	return (
 		<section className={classes.section}>

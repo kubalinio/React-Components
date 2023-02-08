@@ -86,6 +86,8 @@ button {
 	cursor: pointer;
 }
 
+
+
 /* Controls DarkMode*/
 
 .input {
@@ -148,6 +150,105 @@ body.dark .handle::before {
 	background: #21213f;
 }
 
+
 /* End Css */
 
-/* FAB BUTTON */
+/* Loading Button */
+
+.button-loading::after,
+.button-loading::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 300%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 0.25s;
+}
+.button-loading.loading::after,
+.button-loading.loading::before {
+	opacity: 1;
+}
+
+.button-loading::before {
+	z-index: 10;
+	background: #ef4169 
+	repeating-linear-gradient(
+		60deg,
+		transparent,
+		transparent 10px,
+		#d7385c 10px,
+		#d7385c 20px
+	);
+}
+
+.button-loading::after {
+	z-index: 20;
+	background: linear-gradient(transparent, #ef4169 90%);
+}
+
+.button-loading.loading::before {
+	animation: loading 0.7s infinite linear;
+}
+
+.button-loading.loading .icon {
+	animation: spin 1s infinite linear;
+}
+
+
+@keyframes loading {
+	0% {
+		transform: translateX(25px);
+	}
+	100% {
+		transform: translateX(-20px);
+	}
+}
+
+@keyframes spin {
+	100% {
+		rotate: 1turn;
+	}
+}
+/* End Loading Button */
+
+/* SliderEcommerce Slick-Carousel */
+
+.slick-dots {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -29px;
+	display: flex !important;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.slick-dots li {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.slick-dots li::after {
+	content: '';
+	position: absolute;
+	display: none;
+	border-radius: 10px;
+	top: -5px;
+	left: 0;
+	right: 0;
+	height: 4px;
+	background: #000;
+}
+
+.slick-dots .slick-active::after {
+	display: flex;
+}
+
+
+/* SliderEcommerce Slick-Carousel  END */

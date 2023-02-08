@@ -32,6 +32,9 @@ const ButtonsPage = () => {
 				<Link href={`/buttons/fab-button-2`}>
 					<li>Fab Button 2</li>
 				</Link>
+				<Link href={`/buttons/loading-button`}>
+					<li>Loading Button</li>
+				</Link>
 			</ul>
 		</section>
 	);
