@@ -5,6 +5,7 @@ const SlidersPage = () => {
 	return (
 		<section className='section'>
 			<h1>All Sliders</h1>
+
 			<ul>
 				<Link href={'/sliders/slider-frame-motion'}>
 					<li>Slider Framer Motion</li>

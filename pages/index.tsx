@@ -2,9 +2,9 @@ import React from 'react';
 
 const HomePage = () => {
 	return (
-		<>
-			<h1>React Components</h1>
-		</>
+		<section className='section'>
+			<h1 className='text-5xl' >React Components</h1>
+		</section>
 	);
 };
 

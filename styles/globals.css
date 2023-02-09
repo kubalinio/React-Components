@@ -232,6 +232,56 @@ body.dark .handle::before {
 	position: relative;
 	display: flex;
 	align-items: center;
+	max-width: 234px;
+}
+
+/* .slick-arrow {
+	display: none !important;
+} */
+/* position: absolute;
+font-size: 0px;
+top: 50%;
+transform: translate(-50%, -50%);
+z-index: 20;
+width: 40px;
+height: 40px;
+background: #fff;
+border-radius: 50%;
+box-shadow: rgba(0, 0, 0 / 8%) 0px 2px 4px 0px, rgba(0, 0, 0 / 8%) 0px 0px 2px 1px; */
+
+/* 
+.slick-prev {
+	left: 25px;
+}
+
+.slick-next {	
+	right: -15px;
+} */
+
+@media (min-width: 1080px ) {
+	
+	.slick-dots {
+		padding-left: 24px;
+	padding-right: 24px;
+		
+	}
+} 
+
+@media (min-width: 1280px ) {
+	.slick-dots {
+		bottom: -5px;
+		
+	}
+	
+	.slick-dots li {
+		max-width: 300px;
+	}
+
+	.slick-slider {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+
 }
 
 .slick-dots li::after {
@@ -243,12 +293,15 @@ body.dark .handle::before {
 	left: 0;
 	right: 0;
 	height: 4px;
-	background: #000;
+	background: #222020;
 }
 
 .slick-dots .slick-active::after {
 	display: flex;
 }
 
+.slick-active {
+	color: #222020;
+}
 
 /* SliderEcommerce Slick-Carousel  END */

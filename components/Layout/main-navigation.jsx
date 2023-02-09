@@ -9,7 +9,7 @@ const MainNavigation = () => {
 			<Link href='/'>
 				<Logo />
 			</Link>
-			<nav>
+			<nav className='hidden sm:flex'>
 				<ul>
 					<li>
 						<Link href='/sidebars'>Sidebars</Link>
