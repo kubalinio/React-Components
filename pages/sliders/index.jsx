@@ -13,9 +13,9 @@ const SlidersPage = () => {
 				<Link href={'/sliders/slider-ecommerce'}>
 					<li>Slider Ecommerce by XKom</li>
 				</Link>
-				{/* <Link href={'/sidebars/sidebar3'}>
-					<li>Sidebar Type 3</li>
-				</Link> */}
+				<Link href={'/sliders/slider-scratch'}>
+					<li>Sidebar From Scratch</li>
+				</Link>
 			</ul>
 		</section>
 	);
