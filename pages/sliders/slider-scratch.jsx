@@ -1,4 +1,5 @@
 import SliderScratch from "../../components/sliders/SliderScratch";
+import SliderScratchSwipeable from "../../components/sliders/SliderScratchDemo/SliderScratchSwipeable";
 
 
 const SliderFrameMotionPage = () => {
@@ -11,7 +12,8 @@ const SliderFrameMotionPage = () => {
 
 	return (
 		<section className="w-full h-full">
-			<SliderScratch slides={images} />
+			{/* <SliderScratch slides={images} /> */}
+			<SliderScratchSwipeable />
 		</section>
 	);
 };

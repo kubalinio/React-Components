@@ -3,7 +3,8 @@ import SliderEcommerce from '../../components/sliders/SliderEcommerce'
 
 const SliderEcommercePage = () => {
     return (
-        <SliderEcommerce />
+        // <SliderEcommerce />
+        <div></div>
     )
 }
 

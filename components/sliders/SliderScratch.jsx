@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
-
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 const Arrow = ({ direction, handleClick }) => (
     <div
@@ -52,25 +52,32 @@ const SliderScratch = (props) => {
     const [state, setState] = useState({
         activeIndex: 0,
         translate: 0,
-        transition: 0.45
+        transition: 0.45,
+        widthSlide: 0
     })
+
 
     const ref = useRef()
 
-    const [width, setWidth] = useState(300)
+    const [width, setWidth] = useState(null)
+    const [move, setMove] = useState(0)
+
+    // useEffect(() => {
+    //     setWidth(ref.current.offsetWidth)
+    // }, [])
 
 
     useEffect(() => {
         function handleWindowResize() {
             setWidth(ref.current.offsetWidth);
 
-        }
+            console.log(window.innerWidth)
 
+        }
         window.addEventListener('resize', handleWindowResize);
 
         return () => {
             window.removeEventListener('resize', handleWindowResize);
-
         };
     }, []);
 
@@ -79,58 +86,60 @@ const SliderScratch = (props) => {
     const { translate, transition, activeIndex } = state
 
     const nextSlide = () => {
-        if (activeIndex === props.slides.length - 1) {
+        if (activeIndex === props.slides.length - 1)
             return setState({
                 ...state,
                 translate: 0,
-                activeIndex: 0
+                activeIndex: 0,
+                widthSlide: window.innerHeight
             })
-        }
 
         setState({
             ...state,
             activeIndex: activeIndex + 1,
-            translate: (activeIndex + 1) * width
+            translate: (activeIndex + 1) * width,
+            widthSlide: window.innerHeight
         })
+
     }
 
 
     const prevSlide = () => {
-        if (activeIndex === 0) {
-            return setState({
-                ...state,
-                translate: (props.slides.length - 1) * width,
-                activeIndex: props.slides.length - 1
-            })
-        }
+        if (activeIndex === 0) return setState({
+            ...state,
+            translate: (props.slides.length - 1) * width,
+            activeIndex: props.slides.length - 1,
+            widthSlide: window.innerHeight
+        })
+
 
         setState({
             ...state,
             activeIndex: activeIndex - 1,
-            translate: (activeIndex - 1) * width
+            translate: (activeIndex - 1) * width,
+            widthSlide: window.innerHeight
         })
+
     }
-
-
-
 
     return (
         <div className='px-4'>
 
             <div className='relative px-4 -mx-4 overflow-hidden'>
 
-                <div ref={ref} className='relative '>
+                <div className='relative '>
                     {/* Slider Grab Div */}
                     <div className='relative flex mt-10'>
                         {/* Slider Content */}
                         <div
                             style={{
-                                transform: `translateX(${-translate}px)`,
-                                width: `${(width * 4)}px`,
+                                transform: `translateX(${-translate + move}px)`,
+                                width: `${(100 * 2)}%`,
                                 transition: 'all 200ms ease-out 0s'
                             }}
                             transition={transition}
                             className='flex flex-none min-w-full'
+
                         >
 
                             {props.slides.map((slide, i) => (

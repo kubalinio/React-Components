@@ -86,7 +86,6 @@ const SidebarMyXCom = () => {
 
 	useEffect(() => {
 
-		console.log(window.innerWidth)
 		const listener = (event) => {
 			if (event.target.scrollingElement.scrollTop >= 35 && window.innerWidth > 1027) {
 				setIsScrollDown(true)
